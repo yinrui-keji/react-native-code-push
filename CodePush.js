@@ -503,7 +503,7 @@ async function syncInternal(options = {}, syncStatusChangeCallback, downloadProg
       return await doDownloadAndInstall();
     }
   } catch (error) {
-    syncStatusChangeCallback(CodePush.SyncStatus.UNKNOWN_ERROR);
+    syncStatusChangeCallback(CodePush.SyncStatus.UNKNOWN_ERROR, error);
     log(error.message);
     throw error;
   }
